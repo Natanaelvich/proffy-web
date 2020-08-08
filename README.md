@@ -15,6 +15,13 @@ For development, you will only need Node.js installed on your environement.
 ### Mobile
 <p align='center'>
 <img src='https://user-images.githubusercontent.com/52014318/89700899-a639e800-d908-11ea-9228-858bea503c74.jpg' width='300' />
+<img src='https://user-images.githubusercontent.com/52014318/89714323-16318800-d974-11ea-9949-6ffb0681dba8.jpg' width='300' />
+</ p>
+
+### Web
+<p align='center'>
+<img src='https://user-images.githubusercontent.com/52014318/89714374-64468b80-d974-11ea-8e3c-1ebd4c94388e.png' />
+<img src='https://user-images.githubusercontent.com/52014318/89714340-26e1fe00-d974-11ea-8cfd-2495eb6603e0.png' />
 </ p>
 
 
