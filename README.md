@@ -1,44 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align='center'> PROFFY </h1>
 
-## Available Scripts
+### project in react js created in next level week rocketseat✡️💜👾⚛
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+## Requirements
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For development, you will only need Node.js installed on your environement.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+## Install
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    $ git clone https://github.com/ORG/PROJECT.git
+    $ cd PROJECT
+    $ npm install
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Start & watch
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    $ npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Update sources
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Some packages usages might change so you should run `npm prune` & `npm install` often.
+A common way to update is by doing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    $ git pull
+    $ npm prune
+    $ npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To run those 3 commands you can just do
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    $ npm run pull
+    
+---
 
-## Learn More
+## Languages & tools
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### JavaScript
+
+- [Eslint](https://eslint.org/) is used to prevent JavaScript error.
+- [Prettier](https://prettier.io/docs/en/index.html) is an opinionated code formatter 
+- [ReactJS](https://github.com/facebook/react) is used for UI.
+
+
+
