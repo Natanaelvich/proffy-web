@@ -2,13 +2,9 @@
 
 ### project in react js created in next level week two rocketseat✡️💜👾⚛
 
----
-
 ## Requirements
 
 For development, you will only need Node.js installed on your environement.
-
----
 
 ## ScreenShots
 
@@ -20,8 +16,8 @@ For development, you will only need Node.js installed on your environement.
 
 ### Web
 <p align='center'>
-<img src='https://user-images.githubusercontent.com/52014318/89714374-64468b80-d974-11ea-8e3c-1ebd4c94388e.png' />
-<img src='https://user-images.githubusercontent.com/52014318/89714340-26e1fe00-d974-11ea-8cfd-2495eb6603e0.png' />
+<img src='https://user-images.githubusercontent.com/52014318/89714374-64468b80-d974-11ea-8e3c-1ebd4c94388e.png' height='400' />
+<img src='https://user-images.githubusercontent.com/52014318/89714340-26e1fe00-d974-11ea-8cfd-2495eb6603e0.png' height='400' />
 </ p>
 
 
@@ -36,30 +32,11 @@ For development, you will only need Node.js installed on your environement.
 
     $ npm start
 
-
-## Update sources
-
-Some packages usages might change so you should run `npm prune` & `npm install` often.
-A common way to update is by doing
-
-    $ git pull
-    $ npm prune
-    $ npm install
-
-To run those 3 commands you can just do
-
-    $ npm run pull
-    
----
-
 ## Languages & tools
 
-
-### JavaScript
-
 - [Eslint](https://eslint.org/) is used to prevent JavaScript error.
-- [Prettier](https://prettier.io/docs/en/index.html) is an opinionated code formatter 
+- [Prettier](https://prettier.io/docs/en/index.html) is an opinionated code formatter.
 - [ReactJS](https://github.com/facebook/react) is used for UI.
-
+- [Typecript](https://www.typescriptlang.org/) TypeScript extends JavaScript by adding types.
 
 
