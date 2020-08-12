@@ -2,6 +2,9 @@ import React from 'react';
 import PageHeader from '../../components/PageHeader';
 import './styles.css';
 
+import Input from '../../components/Input';
+import warningIcon from '../../assets/icons/warning.svg';
+
 function TeacherForm() {
   return (
     <div id="page-teacher-form" className="container">
@@ -15,25 +18,27 @@ formulário de inscrição."
         <fieldset>
           <legend>Seus dados</legend>
 
-          <div className="input-block">
-            <label htmlFor="name">
-              Nome Completo
-              <input type="text" id="name" />
-            </label>
-          </div>
-          <div className="input-block">
-            <label htmlFor="avatar">
-              Avatar
-              <input type="text" id="avatar" />
-            </label>
-          </div>
-          <div className="input-block">
-            <label htmlFor="whatsapp">
-              WhatsApp
-              <input type="text" id="whatsapp" />
-            </label>
-          </div>
+          <Input name="name" label="Nome Completo" />
+          <Input name="avatar" label="Avatar" />
+          <Input name="whatsapp" label="Whatsapp" />
         </fieldset>
+
+        <fieldset>
+          <legend>Sobre a aula</legend>
+
+          <Input name="subject" label="Matéria" />
+          <Input name="const" label="Custo da sua hora por aula" />
+          <Input name="whatsapp" label="Whatsapp" />
+        </fieldset>
+
+        <footer>
+          <p>
+            <img src={warningIcon} alt="Acviso important" />
+            Important! <br />
+            Preencha todos os dados
+          </p>
+          <button type="button">Salvar cadastro</button>
+        </footer>
       </main>
     </div>
   );
