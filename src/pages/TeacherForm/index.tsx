@@ -6,6 +6,8 @@ import Input from '../../components/Input';
 import warningIcon from '../../assets/icons/warning.svg';
 import TextArea from '../../components/TextArea';
 import Select from '../../components/Select';
+import { api } from '../../services/api';
+import { useHistory } from 'react-router-dom';
 
 interface ScheduleItem {
   week_day: number;
@@ -14,12 +16,15 @@ interface ScheduleItem {
 }
 
 function TeacherForm() {
+  const history = useHistory();
+
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [subject, setSubject] = useState('');
   const [cost, setCost] = useState('');
   const [bio, setBio] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const [schedules, setSchedules] = useState<ScheduleItem[]>([
     {
@@ -40,10 +45,37 @@ function TeacherForm() {
     ]);
   }
 
-  function handleCreateClass(e: FormEvent) {
+  async function handleCreateClass(e: FormEvent) {
     e.preventDefault();
 
-    console.log(name, avatar, whatsapp, cost, subject, bio);
+    try {
+      setLoading(true);
+      await api.post('classes', {
+        name,
+        avatar,
+        whatsapp,
+        cost,
+        subject,
+        bio,
+        schedule: schedules,
+      });
+      setLoading(false);
+      history.push('/');
+    } catch (error) {
+      setLoading(false);
+    }
+  }
+
+  function setSchueduleItemVaule(
+    position: number,
+    field: string,
+    value: string
+  ) {
+    const newArray = schedules.map((item, index) =>
+      index === position ? { ...item, [field]: value } : item
+    );
+
+    setSchedules(newArray);
   }
 
   return (
@@ -119,9 +151,13 @@ formulário de inscrição."
               </button>
             </legend>
 
-            {schedules.map((s) => (
-              <div key={s.week_day} className="scheldule-item">
+            {schedules.map((s, index) => (
+              <div key={s.week_day + 1} className="scheldule-item">
                 <Select
+                  value={s.week_day}
+                  onChange={(text) => {
+                    setSchueduleItemVaule(index, 'week_day', text.target.value);
+                  }}
                   options={[
                     { value: '0', label: 'Domingo' },
                     { value: '1', label: 'Segunda' },
@@ -134,8 +170,24 @@ formulário de inscrição."
                   name="week-day"
                   label="Dia da Semana"
                 />
-                <Input name="from" label="Das" type="time" />
-                <Input name="to" label="Até" type="time" />
+                <Input
+                  name="from"
+                  label="Das"
+                  type="time"
+                  value={s.from}
+                  onChange={(text) => {
+                    setSchueduleItemVaule(index, 'from', text.target.value);
+                  }}
+                />
+                <Input
+                  name="to"
+                  label="Até"
+                  type="time"
+                  value={s.to}
+                  onChange={(text) => {
+                    setSchueduleItemVaule(index, 'to', text.target.value);
+                  }}
+                />
               </div>
             ))}
           </fieldset>
@@ -145,7 +197,9 @@ formulário de inscrição."
               Important! <br />
               Preencha todos os dados
             </p>
-            <button type="submit">Salvar cadastro</button>
+            <button disabled={loading} type="submit">
+              {loading ? '...' : 'Salvar cadastro'}
+            </button>
           </footer>
         </form>
       </main>
