@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import PageHeader from '../../components/PageHeader';
 import './styles.css';
 
@@ -40,6 +40,12 @@ function TeacherForm() {
     ]);
   }
 
+  function handleCreateClass(e: FormEvent) {
+    e.preventDefault();
+
+    console.log(name, avatar, whatsapp, cost, subject, bio);
+  }
+
   return (
     <div id="page-teacher-form" className="container">
       <PageHeader
@@ -49,58 +55,99 @@ formulário de inscrição."
       />
 
       <main>
-        <fieldset>
-          <legend>Seus dados</legend>
+        <form onSubmit={handleCreateClass}>
+          <fieldset>
+            <legend>Seus dados</legend>
 
-          <Input name="name" label="Nome Completo" />
-          <Input name="avatar" label="Avatar" />
-          <Input name="whatsapp" label="Whatsapp" />
-        </fieldset>
+            <Input
+              value={name}
+              onChange={(text) => setName(text.target.value)}
+              name="name"
+              label="Nome Completo"
+            />
+            <Input
+              value={avatar}
+              onChange={(text) => setAvatar(text.target.value)}
+              name="avatar"
+              label="Avatar"
+            />
+            <Input
+              value={whatsapp}
+              onChange={(text) => setWhatsapp(text.target.value)}
+              name="whatsapp"
+              label="Whatsapp"
+            />
+          </fieldset>
 
-        <fieldset>
-          <legend>Sobre a aula</legend>
+          <fieldset>
+            <legend>Sobre a aula</legend>
 
-          <Input name="subject" label="Matéria" />
-          <Input name="cost" label="Custo da sua hora por aula" />
-          <TextArea name="bio" label="Biografia" />
-        </fieldset>
+            <Select
+              value={subject}
+              onChange={(text) => setSubject(text.target.value)}
+              options={[
+                { value: 'Artes', label: 'Artes' },
+                { value: 'Biologia', label: 'Biologia' },
+                { value: 'Ciências', label: 'Ciências' },
+                { value: 'Educação Fisica', label: 'Educação Fisica' },
+                { value: 'Física', label: 'Física' },
+                { value: 'Geografia', label: 'Geografia' },
+                { value: 'Historia', label: 'Historia' },
+              ]}
+              name="subject"
+              label="Matéria"
+            />
+            <Input
+              value={cost}
+              onChange={(text) => setCost(text.target.value)}
+              name="cost"
+              label="Custo da sua hora por aula"
+            />
+            <TextArea
+              value={bio}
+              onChange={(text) => setBio(text.target.value)}
+              name="bio"
+              label="Biografia"
+            />
+          </fieldset>
 
-        <fieldset>
-          <legend>
-            Horários disponíveis
-            <button onClick={addNewScheduleItem} type="button">
-              + Novo horário
-            </button>
-          </legend>
+          <fieldset>
+            <legend>
+              Horários disponíveis
+              <button onClick={addNewScheduleItem} type="button">
+                + Novo horário
+              </button>
+            </legend>
 
-          {schedules.map((s) => (
-            <div key={s.week_day} className="scheldule-item">
-              <Select
-                options={[
-                  { value: '0', label: 'Domingo' },
-                  { value: '1', label: 'Segunda' },
-                  { value: '2', label: 'Terça' },
-                  { value: '3', label: 'Quarta' },
-                  { value: '4', label: 'Quinta' },
-                  { value: '5', label: 'Sexta' },
-                  { value: '6', label: 'Sabado' },
-                ]}
-                name="week-day"
-                label="Dia da Semana"
-              />
-              <Input name="from" label="Das" type="time" />
-              <Input name="to" label="Até" type="time" />
-            </div>
-          ))}
-        </fieldset>
-        <footer>
-          <p>
-            <img src={warningIcon} alt="Acviso important" />
-            Important! <br />
-            Preencha todos os dados
-          </p>
-          <button type="button">Salvar cadastro</button>
-        </footer>
+            {schedules.map((s) => (
+              <div key={s.week_day} className="scheldule-item">
+                <Select
+                  options={[
+                    { value: '0', label: 'Domingo' },
+                    { value: '1', label: 'Segunda' },
+                    { value: '2', label: 'Terça' },
+                    { value: '3', label: 'Quarta' },
+                    { value: '4', label: 'Quinta' },
+                    { value: '5', label: 'Sexta' },
+                    { value: '6', label: 'Sabado' },
+                  ]}
+                  name="week-day"
+                  label="Dia da Semana"
+                />
+                <Input name="from" label="Das" type="time" />
+                <Input name="to" label="Até" type="time" />
+              </div>
+            ))}
+          </fieldset>
+          <footer>
+            <p>
+              <img src={warningIcon} alt="Acviso important" />
+              Important! <br />
+              Preencha todos os dados
+            </p>
+            <button type="submit">Salvar cadastro</button>
+          </footer>
+        </form>
       </main>
     </div>
   );

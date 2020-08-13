@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
-import "./styles.css";
+import './styles.css';
 
-import logoimg from "../../assets/images/logo.svg";
-import landingimg from "../../assets/images/landing.svg";
-
-import studyIcon from "../../assets/icons/study.svg";
-import giveClassesIcon from "../../assets/icons/give-classes.svg";
-import purpleHart from "../../assets/icons/purple-heart.svg";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import logoimg from '../../assets/images/logo.svg';
+import landingimg from '../../assets/images/landing.svg';
+import studyIcon from '../../assets/icons/study.svg';
+import giveClassesIcon from '../../assets/icons/give-classes.svg';
+import purpleHart from '../../assets/icons/purple-heart.svg';
+import { api } from '../../services/api';
 
 const Landing: React.FC = () => {
+  const [totalConnections, setTotalConnections] = useState(0);
+
+  useEffect(() => {
+    async function loadTotalConnections() {
+      const response = await api.get('connections');
+
+      setTotalConnections(response.data.total);
+    }
+
+    loadTotalConnections();
+  }, []);
+
   return (
     <div id="page-landing">
       <div id="page-landing-content" className="container">
@@ -37,7 +49,7 @@ const Landing: React.FC = () => {
         </div>
 
         <span className="total-connections">
-          Total de 200 conexões ja realizadas
+          Total de {totalConnections} conexões ja realizadas
           <img src={purpleHart} alt="Coração roxo" />
         </span>
       </div>
