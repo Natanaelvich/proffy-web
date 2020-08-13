@@ -11,6 +11,7 @@
   border: 0;
   padding: 0 2.4rem;
 }
+
 #page-teacher-form main fieldset + fieldset {
   margin-top: 6rem;
 }
@@ -24,6 +25,7 @@
   padding-top: 6.4rem;
   overflow: hidden;
 }
+
 #page-teacher-form main fieldset legend {
   font: 700 2.4rem Archivo;
   color: var(--color-text-title);
@@ -34,6 +36,19 @@
   width: 100%;
   padding-bottom: 1.6rem;
   border-bottom: 1px solid var(--color-line-in-white);
+}
+
+#page-teacher-form main fieldset legend button {
+  background: none;
+  border: 0;
+  color: var(--color-primary);
+  font: 700 1.6rem Archivo;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+#page-teacher-form main fieldset legend button:hover {
+  color: var(--color-primary-darck);
 }
 
 #page-teacher-form main footer label {
@@ -92,6 +107,20 @@
 
   #page-teacher-form main fieldset {
     padding: 0 6.4rem;
+  }
+
+  #page-teacher-form main .scheldule-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 1.6rem;
+  }
+
+  #page-teacher-form main .scheldule-item .input-block + .input-block {
+    margin-top: 0 !important;
+  }
+  #page-teacher-form main .scheldule-item .input-block,
+  #page-teacher-form main .scheldule-item .select-block {
+    margin-top: 0 !important;
   }
 
   #page-teacher-form main footer {
