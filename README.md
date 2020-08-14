@@ -20,9 +20,9 @@ For development, you will only need Node.js installed on your environement.
 
 ### Mobile
 <p align='center'>
-<img src='https://user-images.githubusercontent.com/52014318/89700899-a639e800-d908-11ea-9228-858bea503c74.jpg' width='300' />
-<img src='https://user-images.githubusercontent.com/52014318/90182386-45873100-dd88-11ea-9c6b-591b0d15691e.gif' width='300' />
-<img src='https://user-images.githubusercontent.com/52014318/90182538-81ba9180-dd88-11ea-9140-de4532035804.gif' width='300' />
+<img src='https://user-images.githubusercontent.com/52014318/89700899-a639e800-d908-11ea-9228-858bea503c74.jpg' width='250' />
+<img src='https://user-images.githubusercontent.com/52014318/90182386-45873100-dd88-11ea-9c6b-591b0d15691e.gif' width='250' />
+<img src='https://user-images.githubusercontent.com/52014318/90182538-81ba9180-dd88-11ea-9140-de4532035804.gif' width='250' />
 </ p>
 
 
