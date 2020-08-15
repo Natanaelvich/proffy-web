@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader';
 import './styles.css';
 
@@ -7,7 +8,6 @@ import warningIcon from '../../assets/icons/warning.svg';
 import TextArea from '../../components/TextArea';
 import Select from '../../components/Select';
 import { api } from '../../services/api';
-import { useHistory } from 'react-router-dom';
 
 interface ScheduleItem {
   week_day: number;
